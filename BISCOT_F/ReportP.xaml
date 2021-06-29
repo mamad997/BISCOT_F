@@ -1,0 +1,435 @@
+﻿<Page x:Class="test_matrial.ReportP"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:test_matrial"
+      mc:Ignorable="d" 
+       d:DesignHeight="850" d:DesignWidth="1400"
+      Title="ReportP">
+    <Grid Background="White">
+        <Grid Background="#FFF1F1F1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="49*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid VerticalAlignment="Top" Height="109" Grid.ColumnSpan="2">
+                <StackPanel VerticalAlignment="Top" Height="50">
+                    <Grid Background="#FF2AB1ED" Height="50">
+                        <Label Content="گزارش کلی" Foreground="#DDFFFFFF" HorizontalAlignment="Center" FontWeight="Bold" FontSize="26"></Label>
+                    </Grid>
+
+                </StackPanel>
+                <materialDesign:ColorZone
+            Mode="SecondaryLight"
+            Padding="20"
+            materialDesign:ShadowAssist.ShadowDepth="Depth5"  VerticalAlignment="Top" Height="766" Margin="31,50,32,-707" Background="#FFFFFDFD">
+                    <Grid Margin="-18,-19,-17.2,-30.4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Margin="0,46,0,691.4" Background="#FFFAFAFA" Grid.ColumnSpan="2" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="133.6"/>
+                                <ColumnDefinition Width="92"/>
+                                <ColumnDefinition Width="123.2"/>
+                                <ColumnDefinition Width="104"/>
+                                <ColumnDefinition Width="4.8"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content=":جست و جو از تاریخ" Foreground="#FF42A8A8" HorizontalAlignment="Right" Margin="0,0,1.2,0" Grid.Column="3" Grid.ColumnSpan="2" Width="103"></Label>
+                            <TextBox x:Name="txtdatestart" FlowDirection="RightToLeft" HorizontalAlignment="Left" Height="32" Margin="1,0,0,0" TextWrapping="Wrap" Text="از تاریخ" VerticalAlignment="Top" Width="120" Foreground="#FF837A7A" SelectionBrush="#FF0078D7" CaretBrush="#FF828789" Grid.Column="3" GotFocus="textBox_GotFocus" MouseEnter="Txtdatestart_MouseEnter" MouseLeave="Txtdatestart_MouseLeave"/>
+                            <Label Content=":تا تاریخ" Foreground="#FF42A8A8" HorizontalAlignment="Right" Margin="0,0,42,0" Grid.Column="2" Width="45"/>
+                            <TextBox x:Name="txtdateend" FlowDirection="RightToLeft" HorizontalAlignment="Left" Height="32" Margin="9.6,0,0,0" TextWrapping="Wrap" Text="تا تاریخ" VerticalAlignment="Top" Width="120" Foreground="#FF837A7A" SelectionBrush="#FF0078D7" CaretBrush="#FF828789" Grid.Column="1"/>
+
+                        </Grid>
+                        <DataGrid x:Name="id"
+  ItemsSource="{Binding Triptbls}"
+                              FlowDirection="RightToLeft"
+  CanUserAddRows="False"
+  AutoGenerateColumns="False"
+  HeadersVisibility="All" Margin="0,84,0,0.4" Grid.ColumnSpan="2">
+                            <DataGrid.Resources>
+                                <!--<domain:BindingProxy
+      x:Key="DataContextProxy"
+      Data="{Binding}" xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />-->
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridCheckBoxColumn
+     
+      ElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}">
+                                    <DataGridCheckBoxColumn.Header>
+                                        <Border
+          Background="Transparent">
+                                            <!--<CheckBox
+            IsChecked="{Binding Data.IsAllItems1Selected, Source={StaticResource DataContextProxy}}" />-->
+                                        </Border>
+                                    </DataGridCheckBoxColumn.Header>
+                                    <DataGridCheckBoxColumn.HeaderStyle>
+                                        <Style
+          TargetType="{x:Type DataGridColumnHeader}"
+          BasedOn="{StaticResource MaterialDesignDataGridColumnHeader}">
+                                            <Setter
+            Property="HorizontalContentAlignment"
+            Value="Center" />
+                                        </Style>
+                                    </DataGridCheckBoxColumn.HeaderStyle>
+                                </DataGridCheckBoxColumn>
+                                
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="135">
+                                                <Label Content="نام مسافر">
+
+                                                </Label>
+                                                <StackPanel
+  Orientation="Horizontal" Margin="97,0,0,-0.4">
+                                                    <materialDesign:PopupBox HorizontalAlignment="Left"
+    StaysOpen="True"
+   Margin="0,0,0,-0.4" Width="24">
+                                                        <materialDesign:PopupBox.ToggleContent>
+                                                            <materialDesign:PackIcon Kind="ChevronDown" />
+                                                        </materialDesign:PopupBox.ToggleContent>
+                                                        <Grid
+      Width="300"
+            Height="100"
+      Margin="8,8,8,8">
+                                                            <Grid.Resources>
+                                                                <Style
+          TargetType="{x:Type CheckBox}"
+          BasedOn="{StaticResource MaterialDesignCheckBox}">
+                                                                    <Setter
+            Property="Margin"
+            Value="8,8,10,8" />
+                                                                </Style>
+                                                                <Style
+          TargetType="{x:Type TextBox}"
+          BasedOn="{StaticResource MaterialDesignTextBox}">
+                                                                    <Setter
+            Property="materialDesign:HintAssist.IsFloating"
+            Value="True" />
+                                                                    <Setter
+            Property="Margin"
+            Value="8,8,8,8" />
+                                                                </Style>
+                                                            </Grid.Resources>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition
+          Width="*" />
+                                                                <ColumnDefinition
+          Width="Auto" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition />
+                                                                <RowDefinition />
+                                                            </Grid.RowDefinitions>
+                                                            <TextBox
+  materialDesign:HintAssist.Hint="نام مسافر"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" Margin="-1,0,10,0.4" Height="50" />
+                                                            <StackPanel
+        Orientation="Horizontal"
+        HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="67" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+                                                                <Button
+          Content="بستن"
+          Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}"  />
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </materialDesign:PopupBox>
+                                                </StackPanel>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding usertbl.FullName}" BorderThickness="0" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="108">
+                                                <Label Content="نام راننده" Margin="0,0,0,-0.4">
+
+                                                </Label>
+                                                <StackPanel
+  Orientation="Horizontal" Margin="76,0,0,-0.4">
+                                                    <materialDesign:PopupBox HorizontalAlignment="Left"
+    StaysOpen="True"
+    Margin="0,0,0,-0.4" Width="24">
+                                                        <materialDesign:PopupBox.ToggleContent>
+                                                            <materialDesign:PackIcon Kind="ChevronDown" />
+                                                        </materialDesign:PopupBox.ToggleContent>
+                                                        <Grid
+      Width="300"
+            Height="100"
+      Margin="8,8,8,8">
+                                                            <Grid.Resources>
+                                                                <Style
+          TargetType="{x:Type CheckBox}"
+          BasedOn="{StaticResource MaterialDesignCheckBox}">
+                                                                    <Setter
+            Property="Margin"
+            Value="8,8,10,8" />
+                                                                </Style>
+                                                                <Style
+          TargetType="{x:Type TextBox}"
+          BasedOn="{StaticResource MaterialDesignTextBox}">
+                                                                    <Setter
+            Property="materialDesign:HintAssist.IsFloating"
+            Value="True" />
+                                                                    <Setter
+            Property="Margin"
+            Value="8,8,8,8" />
+                                                                </Style>
+                                                            </Grid.Resources>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition
+          Width="*" />
+                                                                <ColumnDefinition
+          Width="Auto" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition />
+                                                                <RowDefinition />
+                                                            </Grid.RowDefinitions>
+                                                            <TextBox
+  materialDesign:HintAssist.Hint="نام راننده"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" Margin="-1,0,10,0.4" Height="50" />
+                                                            <StackPanel
+        Orientation="Horizontal"
+        HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="67" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+                                                                <Button
+          Content="بستن"
+          Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}"  />
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </materialDesign:PopupBox>
+                                                </StackPanel>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding Drivertbl.FullName}" BorderThickness="0" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="95">
+                                                <Label Content="پلاک">
+
+                                                </Label>
+                                                <StackPanel
+  Orientation="Horizontal" Margin="67,0,0,-0.4">
+                                                    <materialDesign:PopupBox HorizontalAlignment="Left"
+    StaysOpen="True"
+     Margin="0,0,0,-0.4" Width="24">
+                                                        <materialDesign:PopupBox.ToggleContent>
+                                                            <materialDesign:PackIcon Kind="ChevronDown" />
+                                                        </materialDesign:PopupBox.ToggleContent>
+                                                        <Grid
+      Width="300"
+            Height="100"
+      Margin="8,8,8,8">
+                                                            <Grid.Resources>
+                                                                <Style
+          TargetType="{x:Type CheckBox}"
+          BasedOn="{StaticResource MaterialDesignCheckBox}">
+                                                                    <Setter
+            Property="Margin"
+            Value="8,8,10,8" />
+                                                                </Style>
+                                                                <Style
+          TargetType="{x:Type TextBox}"
+          BasedOn="{StaticResource MaterialDesignTextBox}">
+                                                                    <Setter
+            Property="materialDesign:HintAssist.IsFloating"
+            Value="True" />
+                                                                    <Setter
+            Property="Margin"
+            Value="8,8,8,8" />
+                                                                </Style>
+                                                            </Grid.Resources>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition
+          Width="*" />
+                                                                <ColumnDefinition
+          Width="Auto" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition />
+                                                                <RowDefinition />
+                                                            </Grid.RowDefinitions>
+                                                            <TextBox
+  materialDesign:HintAssist.Hint="پلاک"
+  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+  VerticalAlignment="Center" Margin="-1,0,10,0.4" Height="50" />
+                                                            <StackPanel
+        Orientation="Horizontal"
+        HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="67" RenderTransformOrigin="0.5,0.5" Grid.Row="1">
+                                                                <Button
+          Content="بستن"
+          Command="{x:Static materialDesign:PopupBox.ClosePopupCommand}"  />
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </materialDesign:PopupBox>
+                                                </StackPanel>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding Drivertbl.Cartbl.Pelak}" BorderThickness="0" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                
+
+                                <DataGridTextColumn
+      Binding="{Binding StartLocName}"
+      Header="مبدا"
+      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" >
+
+
+                                </DataGridTextColumn>
+                                <DataGridTextColumn
+      Binding="{Binding EndLocName}"
+      Header="مقصد"
+      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" >
+
+
+                                </DataGridTextColumn>
+                                <DataGridTextColumn
+      Binding="{Binding Date}"
+      Header=" تاریخ و ساعت"
+      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" >
+
+
+                                </DataGridTextColumn>
+                                
+                                <DataGridTextColumn
+      Binding="{Binding Status}"
+      Header="وضعیت"
+      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" >
+
+
+                                </DataGridTextColumn>
+                                <DataGridTextColumn
+      Binding="{Binding Tozihat}"
+      Header="توضیحات"
+      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" >
+
+
+                                </DataGridTextColumn>
+                                <!-- use custom combo box column to get better combos. Use ItemsSourceBinding as your binding template to be applied to each combo -->
+                                
+                            </DataGrid.Columns>
+                            <DataGrid.ContextMenu >
+                                <ContextMenu>
+                                    <MenuItem Header="بارگذاری مجدد" Click="btnrefresh_Click">
+                                        <MenuItem.Icon>
+                                            <materialDesign:PackIcon Kind="Refresh" Foreground="#FF90A4AE"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <Separator/>
+                                    <MenuItem Header="چاپ" Click="Button_Click">
+                                        <MenuItem.Icon>
+                                            <materialDesign:PackIcon Kind="Printer"  Foreground="#FF009688"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                    <MenuItem Header="ذخیره فایل اکسل" Click="Button_Click">
+                                        <MenuItem.Icon>
+                                            <materialDesign:PackIcon Kind="FileExcelOutline" Foreground="#FF2AB1ED"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+
+                                </ContextMenu>
+                            </DataGrid.ContextMenu>
+                        </DataGrid>
+                        <Grid Margin="0,0,0,729" Background="#FFF6F6F6" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="286*"/>
+                                <ColumnDefinition Width="915*"/>
+                                <ColumnDefinition Width="67*"/>
+                                <ColumnDefinition Width="17*"/>
+                                <ColumnDefinition Width="47*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="btnrefresh" 
+  Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+  HorizontalAlignment="Right"
+  ToolTip="بارگذاری مجدد" Height="Auto" Margin="0,10,10,10" Width="25" Background="#FF90A4AE" BorderBrush="#FF90A4AE" Grid.Column="4" Click="btnrefresh_Click">
+                                <materialDesign:PackIcon
+    Kind="Refresh" Height="23" Width="23"/>
+                            </Button>
+
+                            <materialDesign:PackIcon Kind="ViewList" Margin="258,15,0,0" Height="22" Width="26" Foreground="#FF3F3F40"></materialDesign:PackIcon>
+                            <materialDesign:PackIcon Kind="ViewList" Margin="129,16,0,0" Height="24" Width="26" Foreground="#FF3F3F40"></materialDesign:PackIcon>
+                            <Label x:Name="label" Content=":تعداد کل" HorizontalAlignment="Left" Margin="204,15,0,0" VerticalAlignment="Top" Height="24" Width="54"/>
+                            <Label x:Name="label_Copy" Content="1000" HorizontalAlignment="Left" Margin="160,17,0,0" VerticalAlignment="Top" Height="22" Width="34"/>
+                            <Label x:Name="label_Copy1" Content=":تعداد نمایش" HorizontalAlignment="Left" Margin="52,15,0,0" VerticalAlignment="Top" Height="24" Width="72"/>
+                            <ComboBox
+  materialDesign:HintAssist.Hint="10" Margin="10,15,0,9" Height="22" HorizontalAlignment="Left" Width="37">
+                                <ComboBoxItem
+    Content="10" />
+                                <ComboBoxItem
+    Content="20" />
+                                <ComboBoxItem
+    Content="30" />
+                                <ComboBoxItem
+    Content="40" />
+                            </ComboBox>
+                            <Button x:Name="btnprint" 
+                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                            HorizontalAlignment="Right"
+                            ToolTip="چاپ" Height="Auto" Margin="0,10,6,9" Width="25" Background="#FF009688" BorderBrush="#FF009688" Grid.Column="2" Click="Button_Click">
+                                <materialDesign:PackIcon
+                                Kind="Printer" Height="23" Width="23"/>
+                            </Button>
+                            <Canvas Margin="229.4,0,326.8,-233.8" Grid.Column="1">
+
+                                <!-- Draws a diagonal line from (10,10) to (50,50). -->
+                            </Canvas>
+                            <Line
+                            X1="0" Y1="90"
+                            X2="0" Y2="0"
+                            Stroke="Black"
+                            StrokeThickness="4" Margin="7,8,6.8,10.2" Grid.Column="3" />
+                            <Button x:Name="btnexcel" 
+                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                            HorizontalAlignment="Left"
+                            ToolTip="ذخیره فایل اکسل" Height="Auto" Margin="6,10,0,10" Width="25" Background="#FF2AB1ED" BorderBrush="#FF2AB1ED" Grid.Column="2" Click="Button_Click">
+                                <materialDesign:PackIcon
+                                Kind="FileExcelOutline" Height="21" Width="19"/>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </materialDesign:ColorZone>
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+
+</Page>
