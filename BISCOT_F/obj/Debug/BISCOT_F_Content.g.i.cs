@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("source/52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("biscot.sql")]
 
 
