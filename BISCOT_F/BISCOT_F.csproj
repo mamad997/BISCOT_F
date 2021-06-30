@@ -229,16 +229,6 @@
     <Resource Include="Source\52eabf633ca6414e60a7677b0b917d92-male-avatar-maker.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Desktop\test\greatmaps-master\Demo.WindowsForms\Demo.WindowsForms.csproj">
-      <Project>{a2e07a76-8b2c-41a2-b23e-ea31ae94d706}</Project>
-      <Name>Demo.WindowsForms</Name>
-    </ProjectReference>
-    <ProjectReference Include="E:\uni\10\biscot_backup\test_matrial\biscotDATAaccess\biscotDATAaccess.csproj">
-      <Project>{6456b5b8-f563-4622-984d-851a12994bb8}</Project>
-      <Name>biscotDATAaccess</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="CustomMarkers\bigMarkerGreen.png" />
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +241,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="biscot.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\biscotDATAaccess\biscotDATAaccess.csproj">
+      <Project>{6456b5b8-f563-4622-984d-851a12994bb8}</Project>
+      <Name>biscotDATAaccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Demo.WindowsForms\Demo.WindowsForms.csproj">
+      <Project>{a2e07a76-8b2c-41a2-b23e-ea31ae94d706}</Project>
+      <Name>Demo.WindowsForms</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />

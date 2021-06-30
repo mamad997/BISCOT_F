@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="biscotir_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cartbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ModelKhodro" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VIN" Type="Int64" />
+    <Property Name="Pelak" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SaleSakht" Type="Int32" />
+    <NavigationProperty Name="Drivertbls" Relationship="Self.FK_CarId" FromRole="Cartbl" ToRole="Drivertbl" />
+  </EntityType>
+  <EntityType Name="Drivertbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="N_Code" Type="Int64" Nullable="false" />
+    <Property Name="FatherName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="N_Id" Type="Int64" />
+    <Property Name="BirthdayDate" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="Int64" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CarId" Type="Int32" />
+    <NavigationProperty Name="Cartbl" Relationship="Self.FK_CarId" FromRole="Drivertbl" ToRole="Cartbl" />
+    <NavigationProperty Name="Triptbls" Relationship="Self.FK_DriverId" FromRole="Drivertbl" ToRole="Triptbl" />
+    <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Triptbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DriverId" Type="Int32" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="StartLoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EndLoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartLocName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EndLocName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Tozihat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Drivertbl" Relationship="Self.FK_DriverId" FromRole="Triptbl" ToRole="Drivertbl" />
+    <NavigationProperty Name="usertbl" Relationship="Self.FK_UserId" FromRole="Triptbl" ToRole="usertbl" />
+  </EntityType>
+  <EntityType Name="usertbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Code" Type="Int64" Nullable="false" />
+    <Property Name="PhoneNumber" Type="Int64" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Triptbls" Relationship="Self.FK_UserId" FromRole="usertbl" ToRole="Triptbl" />
+    <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_CarId">
+    <End Role="Cartbl" Type="Self.Cartbl" Multiplicity="0..1" />
+    <End Role="Drivertbl" Type="Self.Drivertbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cartbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Drivertbl">
+        <PropertyRef Name="CarId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DriverId">
+    <End Role="Drivertbl" Type="Self.Drivertbl" Multiplicity="0..1" />
+    <End Role="Triptbl" Type="Self.Triptbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drivertbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Triptbl">
+        <PropertyRef Name="DriverId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserId">
+    <End Role="usertbl" Type="Self.usertbl" Multiplicity="0..1" />
+    <End Role="Triptbl" Type="Self.Triptbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usertbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Triptbl">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="biscotir_dbEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cartbls" EntityType="Self.Cartbl" />
+    <EntitySet Name="Drivertbls" EntityType="Self.Drivertbl" />
+    <EntitySet Name="Triptbls" EntityType="Self.Triptbl" />
+    <EntitySet Name="usertbls" EntityType="Self.usertbl" />
+    <AssociationSet Name="FK_CarId" Association="Self.FK_CarId">
+      <End Role="Cartbl" EntitySet="Cartbls" />
+      <End Role="Drivertbl" EntitySet="Drivertbls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DriverId" Association="Self.FK_DriverId">
+      <End Role="Drivertbl" EntitySet="Drivertbls" />
+      <End Role="Triptbl" EntitySet="Triptbls" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserId" Association="Self.FK_UserId">
+      <End Role="usertbl" EntitySet="usertbls" />
+      <End Role="Triptbl" EntitySet="Triptbls" />
+    </AssociationSet>
+    <EntitySet Name="View_report" EntityType="biscotir_dbModel.View_report" />
+    <EntitySet Name="View_car" EntityType="biscotir_dbModel.View_car" />
+  </EntityContainer>
+  <EntityType Name="View_report">
+    <Key>
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="StartLocName" />
+      <PropertyRef Name="EndLocName" />
+      <PropertyRef Name="Expr1" />
+      <PropertyRef Name="Expr2" />
+      <PropertyRef Name="ModelKhodro" />
+      <PropertyRef Name="Pelak" />
+    </Key>
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="StartLocName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EndLocName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tozihat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Expr1" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Expr2" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="ModelKhodro" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Pelak" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_car">
+    <Key>
+      <PropertyRef Name="Pelak" />
+      <PropertyRef Name="ModelKhodro" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="N_Code" />
+    </Key>
+    <Property Name="SaleSakht" Type="Int32" />
+    <Property Name="Rang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Pelak" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="VIN" Type="Int64" />
+    <Property Name="ModelKhodro" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="N_Code" Type="Int64" Nullable="false" />
+    <Property Name="FatherName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="N_Id" Type="Int64" />
+    <Property Name="BirthdayDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="Int64" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

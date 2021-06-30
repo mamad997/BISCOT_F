@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="biscotir_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cartbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModelKhodro" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="VIN" Type="bigint" />
+          <Property Name="Pelak" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Rang" Type="nvarchar" MaxLength="20" />
+          <Property Name="SaleSakht" Type="int" />
+        </EntityType>
+        <EntityType Name="Drivertbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="N_Code" Type="bigint" Nullable="false" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="30" />
+          <Property Name="N_Id" Type="bigint" />
+          <Property Name="BirthdayDate" Type="nvarchar" MaxLength="15" />
+          <Property Name="PhoneNumber" Type="bigint" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="CarId" Type="int" />
+          <Property Name="Pic" Type="image" />
+        </EntityType>
+        <EntityType Name="Triptbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DriverId" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="StartLoc" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EndLoc" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="StartLocName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EndLocName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Tozihat" Type="nvarchar(max)" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="usertbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Code" Type="bigint" Nullable="false" />
+          <Property Name="PhoneNumber" Type="bigint" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Pic" Type="image" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'biscotir_db.dbo.View_car' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_car">
+          <Key>
+            <PropertyRef Name="Pelak" />
+            <PropertyRef Name="ModelKhodro" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="N_Code" />
+          </Key>
+          <Property Name="SaleSakht" Type="int" />
+          <Property Name="Rang" Type="nvarchar" MaxLength="20" />
+          <Property Name="Pelak" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="VIN" Type="bigint" />
+          <Property Name="ModelKhodro" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="N_Code" Type="bigint" Nullable="false" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="30" />
+          <Property Name="N_Id" Type="bigint" />
+          <Property Name="BirthdayDate" Type="nvarchar" MaxLength="10" />
+          <Property Name="PhoneNumber" Type="bigint" />
+          <Property Name="Address" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'biscotir_db.dbo.View_report' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_report">
+          <Key>
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="StartLocName" />
+            <PropertyRef Name="EndLocName" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="ModelKhodro" />
+            <PropertyRef Name="Pelak" />
+          </Key>
+          <Property Name="FirstName" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="StartLocName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="EndLocName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Tozihat" Type="nvarchar(max)" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Expr1" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Expr2" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ModelKhodro" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Pelak" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CarId">
+          <End Role="Cartbl" Type="Self.Cartbl" Multiplicity="0..1" />
+          <End Role="Drivertbl" Type="Self.Drivertbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cartbl">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Drivertbl">
+              <PropertyRef Name="CarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DriverId">
+          <End Role="Drivertbl" Type="Self.Drivertbl" Multiplicity="0..1" />
+          <End Role="Triptbl" Type="Self.Triptbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drivertbl">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Triptbl">
+              <PropertyRef Name="DriverId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserId">
+          <End Role="usertbl" Type="Self.usertbl" Multiplicity="0..1" />
+          <End Role="Triptbl" Type="Self.Triptbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usertbl">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Triptbl">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="biscotir_dbModelStoreContainer">
+          <EntitySet Name="Cartbl" EntityType="Self.Cartbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drivertbl" EntityType="Self.Drivertbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Triptbl" EntityType="Self.Triptbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usertbl" EntityType="Self.usertbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View_car" EntityType="Self.View_car" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_car].[SaleSakht] AS [SaleSakht], 
+    [View_car].[Rang] AS [Rang], 
+    [View_car].[Pelak] AS [Pelak], 
+    [View_car].[VIN] AS [VIN], 
+    [View_car].[ModelKhodro] AS [ModelKhodro], 
+    [View_car].[FirstName] AS [FirstName], 
+    [View_car].[LastName] AS [LastName], 
+    [View_car].[N_Code] AS [N_Code], 
+    [View_car].[FatherName] AS [FatherName], 
+    [View_car].[N_Id] AS [N_Id], 
+    [View_car].[BirthdayDate] AS [BirthdayDate], 
+    [View_car].[PhoneNumber] AS [PhoneNumber], 
+    [View_car].[Address] AS [Address]
+    FROM [dbo].[View_car] AS [View_car]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_report" EntityType="Self.View_report" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_report].[FirstName] AS [FirstName], 
+    [View_report].[LastName] AS [LastName], 
+    [View_report].[StartLocName] AS [StartLocName], 
+    [View_report].[EndLocName] AS [EndLocName], 
+    [View_report].[Tozihat] AS [Tozihat], 
+    [View_report].[Date] AS [Date], 
+    [View_report].[Status] AS [Status], 
+    [View_report].[Expr1] AS [Expr1], 
+    [View_report].[Expr2] AS [Expr2], 
+    [View_report].[ModelKhodro] AS [ModelKhodro], 
+    [View_report].[Pelak] AS [Pelak]
+    FROM [dbo].[View_report] AS [View_report]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CarId" Association="Self.FK_CarId">
+            <End Role="Cartbl" EntitySet="Cartbl" />
+            <End Role="Drivertbl" EntitySet="Drivertbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DriverId" Association="Self.FK_DriverId">
+            <End Role="Drivertbl" EntitySet="Drivertbl" />
+            <End Role="Triptbl" EntitySet="Triptbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserId" Association="Self.FK_UserId">
+            <End Role="usertbl" EntitySet="usertbl" />
+            <End Role="Triptbl" EntitySet="Triptbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="biscotir_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cartbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModelKhodro" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="VIN" Type="Int64" />
+          <Property Name="Pelak" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SaleSakht" Type="Int32" />
+          <NavigationProperty Name="Drivertbls" Relationship="Self.FK_CarId" FromRole="Cartbl" ToRole="Drivertbl" />
+        </EntityType>
+        <EntityType Name="Drivertbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="N_Code" Type="Int64" Nullable="false" />
+          <Property Name="FatherName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="N_Id" Type="Int64" />
+          <Property Name="BirthdayDate" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="Int64" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CarId" Type="Int32" />
+          <NavigationProperty Name="Cartbl" Relationship="Self.FK_CarId" FromRole="Drivertbl" ToRole="Cartbl" />
+          <NavigationProperty Name="Triptbls" Relationship="Self.FK_DriverId" FromRole="Drivertbl" ToRole="Triptbl" />
+          <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Triptbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DriverId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="StartLoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EndLoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StartLocName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EndLocName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tozihat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="Drivertbl" Relationship="Self.FK_DriverId" FromRole="Triptbl" ToRole="Drivertbl" />
+          <NavigationProperty Name="usertbl" Relationship="Self.FK_UserId" FromRole="Triptbl" ToRole="usertbl" />
+        </EntityType>
+        <EntityType Name="usertbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Code" Type="Int64" Nullable="false" />
+          <Property Name="PhoneNumber" Type="Int64" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Triptbls" Relationship="Self.FK_UserId" FromRole="usertbl" ToRole="Triptbl" />
+          <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_CarId">
+          <End Role="Cartbl" Type="Self.Cartbl" Multiplicity="0..1" />
+          <End Role="Drivertbl" Type="Self.Drivertbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cartbl">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Drivertbl">
+              <PropertyRef Name="CarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DriverId">
+          <End Role="Drivertbl" Type="Self.Drivertbl" Multiplicity="0..1" />
+          <End Role="Triptbl" Type="Self.Triptbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drivertbl">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Triptbl">
+              <PropertyRef Name="DriverId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserId">
+          <End Role="usertbl" Type="Self.usertbl" Multiplicity="0..1" />
+          <End Role="Triptbl" Type="Self.Triptbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usertbl">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Triptbl">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="biscotir_dbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cartbls" EntityType="Self.Cartbl" />
+          <EntitySet Name="Drivertbls" EntityType="Self.Drivertbl" />
+          <EntitySet Name="Triptbls" EntityType="Self.Triptbl" />
+          <EntitySet Name="usertbls" EntityType="Self.usertbl" />
+          <AssociationSet Name="FK_CarId" Association="Self.FK_CarId">
+            <End Role="Cartbl" EntitySet="Cartbls" />
+            <End Role="Drivertbl" EntitySet="Drivertbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DriverId" Association="Self.FK_DriverId">
+            <End Role="Drivertbl" EntitySet="Drivertbls" />
+            <End Role="Triptbl" EntitySet="Triptbls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserId" Association="Self.FK_UserId">
+            <End Role="usertbl" EntitySet="usertbls" />
+            <End Role="Triptbl" EntitySet="Triptbls" />
+          </AssociationSet>
+          <EntitySet Name="View_report" EntityType="biscotir_dbModel.View_report" />
+          <EntitySet Name="View_car" EntityType="biscotir_dbModel.View_car" />
+        </EntityContainer>
+        <EntityType Name="View_report">
+          <Key>
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="StartLocName" />
+            <PropertyRef Name="EndLocName" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="ModelKhodro" />
+            <PropertyRef Name="Pelak" />
+          </Key>
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="StartLocName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EndLocName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tozihat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Expr1" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Expr2" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ModelKhodro" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Pelak" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_car">
+          <Key>
+            <PropertyRef Name="Pelak" />
+            <PropertyRef Name="ModelKhodro" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="N_Code" />
+          </Key>
+          <Property Name="SaleSakht" Type="Int32" />
+          <Property Name="Rang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Pelak" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="VIN" Type="Int64" />
+          <Property Name="ModelKhodro" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="N_Code" Type="Int64" Nullable="false" />
+          <Property Name="FatherName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="N_Id" Type="Int64" />
+          <Property Name="BirthdayDate" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="Int64" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="biscotir_dbModelStoreContainer" CdmEntityContainer="biscotir_dbEntities1">
+          <EntitySetMapping Name="Cartbls">
+            <EntityTypeMapping TypeName="biscotir_dbModel.Cartbl">
+              <MappingFragment StoreEntitySet="Cartbl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ModelKhodro" ColumnName="ModelKhodro" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="Pelak" ColumnName="Pelak" />
+                <ScalarProperty Name="Rang" ColumnName="Rang" />
+                <ScalarProperty Name="SaleSakht" ColumnName="SaleSakht" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drivertbls">
+            <EntityTypeMapping TypeName="biscotir_dbModel.Drivertbl">
+              <MappingFragment StoreEntitySet="Drivertbl">
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="N_Code" ColumnName="N_Code" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="N_Id" ColumnName="N_Id" />
+                <ScalarProperty Name="BirthdayDate" ColumnName="BirthdayDate" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="CarId" ColumnName="CarId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Triptbls">
+            <EntityTypeMapping TypeName="biscotir_dbModel.Triptbl">
+              <MappingFragment StoreEntitySet="Triptbl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DriverId" ColumnName="DriverId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="StartLoc" ColumnName="StartLoc" />
+                <ScalarProperty Name="EndLoc" ColumnName="EndLoc" />
+                <ScalarProperty Name="StartLocName" ColumnName="StartLocName" />
+                <ScalarProperty Name="EndLocName" ColumnName="EndLocName" />
+                <ScalarProperty Name="Tozihat" ColumnName="Tozihat" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usertbls">
+            <EntityTypeMapping TypeName="biscotir_dbModel.usertbl">
+              <MappingFragment StoreEntitySet="usertbl">
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_report">
+            <EntityTypeMapping TypeName="biscotir_dbModel.View_report">
+              <MappingFragment StoreEntitySet="View_report">
+                <ScalarProperty Name="Pelak" ColumnName="Pelak" />
+                <ScalarProperty Name="ModelKhodro" ColumnName="ModelKhodro" />
+                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Tozihat" ColumnName="Tozihat" />
+                <ScalarProperty Name="EndLocName" ColumnName="EndLocName" />
+                <ScalarProperty Name="StartLocName" ColumnName="StartLocName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_car">
+            <EntityTypeMapping TypeName="biscotir_dbModel.View_car">
+              <MappingFragment StoreEntitySet="View_car">
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="BirthdayDate" ColumnName="BirthdayDate" />
+                <ScalarProperty Name="N_Id" ColumnName="N_Id" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="N_Code" ColumnName="N_Code" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ModelKhodro" ColumnName="ModelKhodro" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="Pelak" ColumnName="Pelak" />
+                <ScalarProperty Name="Rang" ColumnName="Rang" />
+                <ScalarProperty Name="SaleSakht" ColumnName="SaleSakht" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

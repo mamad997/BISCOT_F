@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="biscotir_dbModelStoreContainer" CdmEntityContainer="biscotir_dbEntities1">
+    <EntitySetMapping Name="Cartbls">
+      <EntityTypeMapping TypeName="biscotir_dbModel.Cartbl">
+        <MappingFragment StoreEntitySet="Cartbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ModelKhodro" ColumnName="ModelKhodro" />
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="Pelak" ColumnName="Pelak" />
+          <ScalarProperty Name="Rang" ColumnName="Rang" />
+          <ScalarProperty Name="SaleSakht" ColumnName="SaleSakht" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drivertbls">
+      <EntityTypeMapping TypeName="biscotir_dbModel.Drivertbl">
+        <MappingFragment StoreEntitySet="Drivertbl">
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="N_Code" ColumnName="N_Code" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="N_Id" ColumnName="N_Id" />
+          <ScalarProperty Name="BirthdayDate" ColumnName="BirthdayDate" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CarId" ColumnName="CarId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Triptbls">
+      <EntityTypeMapping TypeName="biscotir_dbModel.Triptbl">
+        <MappingFragment StoreEntitySet="Triptbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DriverId" ColumnName="DriverId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="StartLoc" ColumnName="StartLoc" />
+          <ScalarProperty Name="EndLoc" ColumnName="EndLoc" />
+          <ScalarProperty Name="StartLocName" ColumnName="StartLocName" />
+          <ScalarProperty Name="EndLocName" ColumnName="EndLocName" />
+          <ScalarProperty Name="Tozihat" ColumnName="Tozihat" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usertbls">
+      <EntityTypeMapping TypeName="biscotir_dbModel.usertbl">
+        <MappingFragment StoreEntitySet="usertbl">
+          <ScalarProperty Name="Pic" ColumnName="Pic" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_report">
+      <EntityTypeMapping TypeName="biscotir_dbModel.View_report">
+        <MappingFragment StoreEntitySet="View_report">
+          <ScalarProperty Name="Pelak" ColumnName="Pelak" />
+          <ScalarProperty Name="ModelKhodro" ColumnName="ModelKhodro" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Tozihat" ColumnName="Tozihat" />
+          <ScalarProperty Name="EndLocName" ColumnName="EndLocName" />
+          <ScalarProperty Name="StartLocName" ColumnName="StartLocName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_car">
+      <EntityTypeMapping TypeName="biscotir_dbModel.View_car">
+        <MappingFragment StoreEntitySet="View_car">
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="BirthdayDate" ColumnName="BirthdayDate" />
+          <ScalarProperty Name="N_Id" ColumnName="N_Id" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="N_Code" ColumnName="N_Code" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="ModelKhodro" ColumnName="ModelKhodro" />
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="Pelak" ColumnName="Pelak" />
+          <ScalarProperty Name="Rang" ColumnName="Rang" />
+          <ScalarProperty Name="SaleSakht" ColumnName="SaleSakht" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

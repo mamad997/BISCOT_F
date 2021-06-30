@@ -1,0 +1,16 @@
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\b\GMap.NET.Core.Fakes.xml
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\b\GMap.NET.Core.Fakes.dll
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\b\GMap.NET.Core.Fakes.pdb
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\b\GMap.NET.Core.dll
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\b\GMap.NET.WindowsForms.dll
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\b\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\b\Mono.Data.Sqlite.dll
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\b\System.Data.SQLite.DLL
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\b\GMap.NET.Core.pdb
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\b\GMap.NET.WindowsForms.pdb
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\b\System.Data.SQLite.xml
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\o\f.csprojAssemblyReference.cache
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\o\f.csproj.CoreCompileInputs.cache
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\o\f.csproj.CopyComplete
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\o\GMap.NET.Core.Fakes.dll
+C:\Users\moham\Desktop\test\greatmaps-master\Demo.WindowsForms\obj\Debug\Fakes\gmnetc\o\GMap.NET.Core.Fakes.pdb

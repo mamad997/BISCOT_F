@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BISCOT_F", "BISCOT_F\BISCOT_F.csproj", "{BB226F40-2668-4327-B906-DF52D4727994}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.WindowsForms", "..\..\..\Desktop\test\greatmaps-master\Demo.WindowsForms\Demo.WindowsForms.csproj", "{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "biscotDATAaccess", "biscotDATAaccess\biscotDATAaccess.csproj", "{6456B5B8-F563-4622-984D-851A12994BB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "biscotDATAaccess", "E:\uni\10\biscot_backup\test_matrial\biscotDATAaccess\biscotDATAaccess.csproj", "{6456B5B8-F563-4622-984D-851A12994BB8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.WindowsForms", "Demo.WindowsForms\Demo.WindowsForms.csproj", "{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,6 @@ Global
 		{BB226F40-2668-4327-B906-DF52D4727994}.v4.0-Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB226F40-2668-4327-B906-DF52D4727994}.v4.0-Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB226F40-2668-4327-B906-DF52D4727994}.v4.0-Release|Any CPU.Build.0 = Release|Any CPU
-		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.v4.0-Debug|Any CPU.ActiveCfg = v4.0-Debug|Any CPU
-		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.v4.0-Debug|Any CPU.Build.0 = v4.0-Debug|Any CPU
-		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.v4.0-Release|Any CPU.ActiveCfg = v4.0-Release|Any CPU
-		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.v4.0-Release|Any CPU.Build.0 = v4.0-Release|Any CPU
 		{6456B5B8-F563-4622-984D-851A12994BB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6456B5B8-F563-4622-984D-851A12994BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6456B5B8-F563-4622-984D-851A12994BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +33,14 @@ Global
 		{6456B5B8-F563-4622-984D-851A12994BB8}.v4.0-Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6456B5B8-F563-4622-984D-851A12994BB8}.v4.0-Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6456B5B8-F563-4622-984D-851A12994BB8}.v4.0-Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.v4.0-Debug|Any CPU.ActiveCfg = v4.0-Debug|Any CPU
+		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.v4.0-Debug|Any CPU.Build.0 = v4.0-Debug|Any CPU
+		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.v4.0-Release|Any CPU.ActiveCfg = v4.0-Release|Any CPU
+		{A2E07A76-8B2C-41A2-B23E-EA31AE94D706}.v4.0-Release|Any CPU.Build.0 = v4.0-Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
